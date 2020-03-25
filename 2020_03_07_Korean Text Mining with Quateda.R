@@ -365,19 +365,3 @@ wordcloud.results <- textplot_wordcloud(mining.TXT.token.dfm, min_count = 5, ran
                                         rotation = .25, font ="AppleMyungjo", color = RColorBrewer::brewer.pal(8,"Dark2"))
 
 
-# =======================================
-# Word Fish 만들기
-# =======================================
-par(family="AppleMyungjo")
-theme_set(theme_bw(base_family = "AppleMyungjo")) 
-
-# Wordfish 모델 예측
-mining.TXT.token.wd <- textmodel_wordfish(mining.TXT.token.dfm, dir = c(6,5))
-
-# Wordfish 모델 그리기
-textplot_scale1d (mining.TXT.token.wd, margin = "features", alpha = 0.1,
-                 highlighted = c("사회적", "여성결혼이민자", "결혼이민자", 
-                                 "이민정책", "결혼이민여성", "다문화", "네트워크",
-                                 "한국어", "프로그램"),
-                 theme_bw(base_family = "AppleMyungjo"),
-                 highlighted_color = "red")
